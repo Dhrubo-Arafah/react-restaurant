@@ -4,6 +4,7 @@ import DishDetail from './DishDetail'
 import MenuItem from './MenuItem'
 import { connect } from 'react-redux'
 import { ADD_COMMENT } from '../../redux/actionTypes'
+import { addComment } from '../../redux/actionCreators'
 
 const mapStateToProps = state => {
   return {
@@ -14,15 +15,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    addComment: (dishId, rating, author, comment) => dispatch({
-      type: ADD_COMMENT,
-      payload: {
-        dishId: dishId,
-        author: author,
-        rating: rating,
-        comment: comment
-      }
-    })
+    addComment: (dishId, rating, author, comment) => dispatch(addComment(dishId, rating, author, comment))
   }
 }
 
