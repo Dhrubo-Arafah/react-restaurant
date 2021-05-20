@@ -3,7 +3,6 @@ import { CardColumns, Button, Modal, ModalBody, ModalFooter } from 'reactstrap'
 import DishDetail from './DishDetail'
 import MenuItem from './MenuItem'
 import { connect } from 'react-redux'
-import { ADD_COMMENT } from '../../redux/actionTypes'
 import { addComment } from '../../redux/actionCreators'
 
 const mapStateToProps = state => {

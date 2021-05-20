@@ -3,7 +3,6 @@ import { CardText, CardBody, CardTitle, Card, CardImg } from 'reactstrap'
 import CommentForm from './CommentForm'
 import LoadComments from './LoadComments'
 function DishDetail(props) {
-  console.log(props)
   return (
     <div>
       <Card>

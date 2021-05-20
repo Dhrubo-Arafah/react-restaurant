@@ -14,8 +14,7 @@ export class CommentForm extends Component {
  }
 
  handleInputChange = event => {
-  console.log(event.target);
-  this.setState({
+ this.setState({
    [event.target.name]: event.target.value
  })
 }
