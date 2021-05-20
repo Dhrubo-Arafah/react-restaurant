@@ -1,6 +1,7 @@
 import React from 'react'
-import { Card, CardBody, CardImgOverlay, CardImg, CardTitle } from 'reactstrap'
+import { Card, CardBody, CardImg, CardTitle } from 'reactstrap'
 const MenuItem = (props) => {
+  console.log(props)
   return (
     <div className="container">
       <Card className="mb-3">
