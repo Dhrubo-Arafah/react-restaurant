@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
 import { Button, Form, Input } from 'reactstrap';
 
 export class CommentForm extends Component {
@@ -78,4 +79,4 @@ export class CommentForm extends Component {
  }
 }
 
-export default CommentForm
+export default connect()(CommentForm)

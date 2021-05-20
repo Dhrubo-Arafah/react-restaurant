@@ -9,6 +9,7 @@ function LoadComments(props) {
           <h5>{comment.author}</h5>
           <p>{comment.comment}</p>
           <p>{dateFormat(comment.date, "dddd, mmmm ds, yyyy, h:MM:ss TT")}</p>
+          <p>Rating: { comment.rating}</p>
         </div>
       )
     })
