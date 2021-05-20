@@ -6,8 +6,9 @@ const initialState = {
  comments:COMMENTS
 }
 
-const reducer = (state=initialState, action) => {
- return state;
+export const reducer = (state = initialState, action) => {
+ switch (action.type) {
+  default:
+   return state;
+ }
 }
-
-export default reducer
