@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import { CardColumns, Button, Modal, ModalBody, ModalFooter } from 'reactstrap'
 import DISHES from '../../data/dishes'
+import COMMENTS from '../../data/comments'
 import DishDetail from './DishDetail'
 import MenuItem from './MenuItem'
 export class Menu extends Component {
   state = {
     dishes: DISHES,
+    comments:COMMENTS,
     selectedDish: null,
     modalOpen: false,
   }
@@ -22,6 +24,7 @@ export class Menu extends Component {
   }
   render() {
     const menu = this.state.dishes.map(item => {
+      console.log(item.id)
       return (
         <MenuItem
           dish={item}
@@ -32,7 +35,13 @@ export class Menu extends Component {
     })
     let dishDetail = null;
     if (this.state.selectedDish != null) {
-      dishDetail = <DishDetail dish={this.state.selectedDish} />
+      const comments = this.state.comments.filter(comment => {
+        return comment.dishId===this.state.selectedDish.id
+      })
+      dishDetail = <DishDetail
+        dish={this.state.selectedDish}
+        comment={comments}
+      />
     }
     return (
       <div className="row mt-3">

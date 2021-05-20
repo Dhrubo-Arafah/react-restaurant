@@ -2,6 +2,7 @@ import React from 'react'
 import { CardText, CardBody, CardTitle, Card, CardImg } from 'reactstrap'
 import LoadComments from './LoadComments'
 function DishDetail(props) {
+  console.log(props)
   return (
     <div>
       <Card>
@@ -13,7 +14,7 @@ function DishDetail(props) {
             <CardText>Price {props.dish.price} BDT</CardText>
           </CardText>
           <hr />
-          <LoadComments comments={props.dish.comments} />
+          <LoadComments comments={props.comment} />
         </CardBody>
       </Card>
     </div>
