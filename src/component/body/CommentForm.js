@@ -21,13 +21,24 @@ export class CommentForm extends Component {
 }
 
  handleSubmit = event => {
+  this.props.dispatch({
+   type: 'ADD_COMMENT',
+   payload: {
+    dishId: this.props.dishId,
+    author: this.state.author,
+    rating: this.state.rating,
+    comment:this.state.comment
+   }
+  })
+
   this.setState({
    author: '',
    rating: '',
    comment: ''
   })
  event.preventDefault()
-}
+ }
+ 
  render() {
   return (
    <div>

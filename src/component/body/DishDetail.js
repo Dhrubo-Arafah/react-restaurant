@@ -17,7 +17,7 @@ function DishDetail(props) {
           <hr />
           <LoadComments comments={props.comment} />
           <hr />
-          <CommentForm/>
+          <CommentForm dishId={ props.dish.id}/>
         </CardBody>
       </Card>
     </div>
