@@ -9,21 +9,41 @@ export class CommentForm extends Component {
    rating: '',
    comment: ''
   }
+  this.handleInputChange = this.handleInputChange.bind(this);
+  this.handleSubmit = this.handleSubmit.bind(this);
  }
+
+ handleInputChange = event => {
+  console.log(event.target);
+  this.setState({
+   [event.target.name]: event.target.value
+ })
+}
+
+ handleSubmit = event => {
+  this.setState({
+   author: '',
+   rating: '',
+   comment: ''
+  })
+ event.preventDefault()
+}
  render() {
   return (
    <div>
-    <Form>
+    <Form onSubmit={this.handleSubmit}>
      <Input
       type="text"
       name="author"
       value={this.state.author}
       placeholder="Your Name"
+      onChange={this.handleInputChange}
       required />
      <br />
      <Input
       type="select"
       name="rating"
+      onChange={this.handleInputChange}
       value={this.state.rating}>
       <option>1</option>
       <option>2</option>
@@ -37,6 +57,7 @@ export class CommentForm extends Component {
       name="comment"
       value={this.state.comment}
       placeholder="Your Comment"
+      onChange={this.handleInputChange}
       required />
      <br />
      <Button type="submit">Submit Comment</Button>

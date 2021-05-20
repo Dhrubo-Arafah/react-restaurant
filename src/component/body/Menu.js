@@ -49,11 +49,12 @@ export class Menu extends Component {
         comment={comments}
       />
     }
+
     return (
       <div className="row mt-3">
         <div className="container">
           <CardColumns>{menu}</CardColumns>
-          <Modal isOpen={this.state.modalOpen} onClick={this.toggleModal}>
+          <Modal isOpen={this.state.modalOpen}>
             <ModalBody>
               {dishDetail}
             </ModalBody>
