@@ -8,11 +8,11 @@ function Body() {
   return (
     <div>
       <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/menu" exact component={Menu} />
-        <Route path="/about" exact component={About} />
-        <Route path="/contact" exact component={Contact} />
-        <Redirect from="/" to="/home"></Redirect>
+        <Route path={process.env.PUBLIC_URL + "/" } exact component={Home} />
+        <Route path={process.env.PUBLIC_URL + "/menu"} exact component={Menu} />
+        <Route path={process.env.PUBLIC_URL + "/about"} exact component={About} />
+        <Route path={process.env.PUBLIC_URL + "/contact"} exact component={Contact} />
+        <Redirect from={process.env.PUBLIC_URL + "/"} to={process.env.PUBLIC_URL + "/home"}></Redirect>
       </Switch>
     </div>
   )
