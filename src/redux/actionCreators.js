@@ -1,4 +1,5 @@
-import { ADD_COMMENT, DISHES_LOADING, LOAD_DIHSES } from "./actionTypes"
+import DISHES from "../data/dishes"
+import { ADD_COMMENT, DISHES_LOADING, LOAD_DISHES } from "./actionTypes"
 
 export const addComment = (dishId, author, rating, comment) => ({
  type: ADD_COMMENT,
@@ -11,9 +12,15 @@ export const addComment = (dishId, author, rating, comment) => ({
 })
 
 export const LoadDishes = dishes => ({
- type: LOAD_DIHSES,
+ type: LOAD_DISHES,
  payload: dishes
 })
 
-export const dishesLoading = () => ({ type: DISHES_LOADING }
-)
+export const dishesLoading = () => ({ type: DISHES_LOADING })
+
+export const fetchDishes = () => {
+ return dispatch => {
+  dispatch(dishesLoading())
+  setTimeout(() => { dispatch(LoadDishes(DISHES))}, 2000)
+ }
+}

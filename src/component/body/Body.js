@@ -12,7 +12,7 @@ function Body() {
         <Route path="/menu" exact component={Menu} />
         <Route path="/about" exact component={About} />
         <Route path="/contact" exact component={Contact} />
-        
+        <Redirect from="/" to="/home"/>
       </Switch>
     </div>
   )
